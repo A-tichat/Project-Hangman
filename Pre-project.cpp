@@ -1,4 +1,7 @@
 #include "random.h"
+#include <conio.h>
+#include<Windows.h>
+#include <mmsystem.h>
 using namespace std;
 
 int n=0,deathcount=0,line;
@@ -6,6 +9,8 @@ int n=0,deathcount=0,line;
 int main(){
 	string textline;
 	srand(time(0));
+	cout<<"Welcome to Hangman game";
+	PlaySound("DownYonder.m4a", NULL, SND_SYNC);
 	ifstream fin("Exam.txt");
 	
 	getline(fin,textline);
