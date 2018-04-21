@@ -1,19 +1,27 @@
 #include "random.h"
+#include "project_2.h"
 #include <conio.h>
 #include<Windows.h>
 #include <mmsystem.h>
+#include "clear.h" //use ClearScreen() to clear screen
+
 using namespace std;
 
 int n=0,deathcount=0,line;
 
 int main(){
 	string textline;
+	cout<<"\nWelcome to Hangman game\n";
+	PlaySound(TEXT("welcome.wav"), NULL, SND_SYNC);
+	Home();
 	bool checkline=true;
 	bool practicemode=false,normalmode=false,timemode=false;
 	srand(time(0));
-	cout<<"Welcome to Hangman game\n";
-	PlaySound(TEXT("DownYonder.wav"), NULL, SND_ASYNC);
-	cout<<"Please select mode \n[1]Practice mode\n[2]Normal mode\n[3]Time mode\n";//select mode
+
+	cout<<"\nPlease select mode \n";
+	
+	PlaySound(TEXT("mode.wav"), NULL, SND_SYNC);
+	PlaySound(TEXT("mode2.wav"), NULL, SND_SYNC);
 	int selectmode=0;
 	cin>>selectmode;
 	switch (selectmode){  //select mode
@@ -30,7 +38,9 @@ int main(){
 			timemode=true;
 			break;
 	}
+	
 	cout<<"Please select type of word\n[1]animal\n[2]country\n[3]fruits\n";
+	
 	int typeofword=0;
 	cin>>typeofword;
 		ifstream fin1("animal.txt");
@@ -86,6 +96,7 @@ int main(){
 			
 		if (n==0) {
 			cout << "\n"<< "wrong!";
+			PlaySound(TEXT("wrong.wav"), NULL, SND_SYNC);
 			deathcount++;
 		}
 		cout << "\n";
