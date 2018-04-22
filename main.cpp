@@ -4,18 +4,32 @@
 #include <Windows.h>
 #include <mmsystem.h>
 #include "clear.h" //use ClearScreen() to clear screen
+#include "HangmanPicture.h"
+#include <time.h>
 
 using namespace std;
 
 int n=0,deathcount=0,line;
+void addpoint();
+int vocabcheck;
+string vocabcheck2;
+bool checktoaddpoint=true;
+bool checktoaddpoint2=false;
+bool checkline=true;
+bool practicemode=false,normalmode=false,timemode=false;
+vector<char> alphabet;
+char c;
+
+
 
 int main(){
+	
+  	
 	string textline;
 	Home();
 	PlaySound(TEXT("welcome.wav"), NULL, SND_SYNC);
 	
-	bool checkline=true;
-	bool practicemode=false,normalmode=false,timemode=false;
+
 	srand(time(0));
 
 	cout<<"\nPlease select mode: ";
@@ -36,9 +50,9 @@ int main(){
 		case 3:practicemode=false;
 			normalmode=false;
 			timemode=true;
+			 
 			break;
 	}
-	
 	selection();
 	
 	int typeofword=0;
@@ -52,6 +66,7 @@ int main(){
 		case 3:getline(fin3,textline);break;
 	}
 	//ifstream fin("Exam.txt");
+	
 
 	
 	
@@ -71,9 +86,12 @@ int main(){
 	}
 	
 	int round=0;
+	
 	while (round<line) {
+		newTurn();
 		int log=list[round];
 		char b[vocab[log].size()];
+		
 		for(int i=0;i<vocab[log].size();i++){
 			b[i]='_';
 			cout << b[i] << "  ";
@@ -81,7 +99,7 @@ int main(){
 		cout << "\n";
 		do{
 			n=0;
-			char c;
+			
 			cout << "input your letter: ";
 			cin >> c;
 			cout << "\n";
@@ -89,24 +107,54 @@ int main(){
 			for(int i=0;i<vocab[log].size();i++){
 				if(c==vocab[log][i]) {
 					b[i]=c;
+					rightAns=b[i];
 					n++;
+					 checktoaddpoint2=true;
 				}
+				vocabcheck2=vocab[log];
+				
+				
+				
 				cout << b[i] << "  ";
 			}
 			
 		if (n==0) {
 			cout << "\n"<< "wrong!";
-			PlaySound(TEXT("wrong.wav"), NULL, SND_SYNC);
+			PlaySound(TEXT("wrong.wav"), NULL, SND_ASYNC);
 			deathcount++;
 		}
-		cout << "\n";
 		
+		checkAns(c);
+		
+		addpoint();
+		alphabet.push_back(c);
+		vocabcheck = alphabet.size();
+		showScore(score);
+		drawScene5Lifes(count);
+		addScore();
+		cout << "\n";
+		bool checktoaddpoint2=false;
 		}while(vocab[log]!=b);
 		
-		cout << "wrong is "<< deathcount <<" time.\n";
+		cout << "wrong is "<< deathcount <<" times.\n";
 		round++;
 		deathcount=0;
 	}
 	
 	return 0;
+}
+void addpoint(){
+	for(int i=0;i<vocabcheck;i++){
+		if(c == alphabet[i]) checktoaddpoint=false;
+	
+		
+	}
+	if(checktoaddpoint and checktoaddpoint2) {
+	
+		if(normalmode) score += n*((6-count)*45*vocabcheck2.size());
+	
+		
+	}
+	checktoaddpoint=true;
+	checktoaddpoint2=false;
 }

@@ -21,13 +21,13 @@ string key;
 string name;
 int score;
 int count;
-string rightAns ="1";
+char rightAns;
 bool ans;
 bool win = false;
 bool lose = false;
 int choose;
 
-int main(){
+void drawhangman(){
 	addName();
 	do{
 		newTurn();
@@ -40,7 +40,7 @@ int main(){
 		
 	}while(choose!=3);
 	
-	return 0;
+	
 }
 
 
@@ -49,7 +49,7 @@ void newTurn()
 	ans = false;
 }
 
-void checkAns(string key)
+void checkAns(char key)
 {
 	if(key==rightAns) ans = true;
 	if(ans==false) count++;
