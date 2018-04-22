@@ -1,7 +1,7 @@
 #include "random.h"
-#include "project_2.h"
+#include "screen.h"
 #include <conio.h>
-#include<Windows.h>
+#include <Windows.h>
 #include <mmsystem.h>
 #include "clear.h" //use ClearScreen() to clear screen
 
@@ -11,14 +11,14 @@ int n=0,deathcount=0,line;
 
 int main(){
 	string textline;
-	cout<<"\nWelcome to Hangman game\n";
-	PlaySound(TEXT("welcome.wav"), NULL, SND_SYNC);
 	Home();
+	PlaySound(TEXT("welcome.wav"), NULL, SND_SYNC);
+	
 	bool checkline=true;
 	bool practicemode=false,normalmode=false,timemode=false;
 	srand(time(0));
 
-	cout<<"\nPlease select mode \n";
+	cout<<"\nPlease select mode: ";
 	
 	PlaySound(TEXT("mode.wav"), NULL, SND_SYNC);
 	PlaySound(TEXT("mode2.wav"), NULL, SND_SYNC);
@@ -39,7 +39,7 @@ int main(){
 			break;
 	}
 	
-	cout<<"Please select type of word\n[1]animal\n[2]country\n[3]fruits\n";
+	selection();
 	
 	int typeofword=0;
 	cin>>typeofword;
