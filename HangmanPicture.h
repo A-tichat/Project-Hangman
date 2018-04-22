@@ -15,17 +15,16 @@ void drawScene5Lifes(int);
 void newPlayer();
 void loseScene();
 void ScoreBoard();
-vector<string> yourName;
-vector<int> yourScore;
+
 
 string key;
-string name;
-double score;
+
+
 int count;
 char rightAns ;
-bool ans;
+
 bool win = false;
-bool lose = false;
+
 int choose;
 
 void writescore(){
@@ -48,20 +47,6 @@ void drawhangman(){
 	
 	
 }
-
-
-void newTurn()
-{
-	ans = false;
-}
-
-void checkAns(char key)
-{
-	if(key==rightAns) ans = true;
-	if(ans==false) count++;
-	
-}
-
 
 
 void drawScene11Lifes(int countDown)
@@ -96,63 +81,10 @@ void drawScene11Lifes(int countDown)
 	
 }
 
-void drawScene5Lifes(int countDown)
-{
-	cout << 								"\t\t\t\t _______________________"<< "\n";
-	cout <<									"\t\t\t\t|                       |"<< "\n";
-	cout << 								"\t\t\t\t|      ___________      |"<< "\n";
-	if(countDown>=1){cout << 				"\t\t\t\t|     |           |     |"<< "\n";
-					cout << 				"\t\t\t\t|     |           |     |"<< "\n";
-	}else {cout <<							"\t\t\t\t|     |                 |"<< "\n";
-				cout <<						"\t\t\t\t|     |                 |"<< "\n";}
-	if(countDown>=2)cout << 				"\t\t\t\t|     |           O     |"<< "\n";
-		else cout <<						"\t\t\t\t|     |                 |"<< "\n";
-	if(countDown>=5){cout << 				"\t\t\t\t|     |          /|\\    |"<< "\n";
-					cout << 				"\t\t\t\t|     |         / | \\   |"<< "\n";
-	}else if(countDown>=4){cout << 			"\t\t\t\t|     |          /|     |"<< "\n";
-					cout << 				"\t\t\t\t|     |         / |     |"<< "\n";
-	}else if(countDown>=3){cout << 			"\t\t\t\t|     |           |     |"<< "\n";
-					cout << 				"\t\t\t\t|     |           |     |"<< "\n";
-	}else {cout <<							"\t\t\t\t|     |                 |"<< "\n";
-				cout <<						"\t\t\t\t|     |                 |"<< "\n";}
-	if(countDown>=7){cout << 				"\t\t\t\t|     |          / \\    |"<< "\n";
-					cout << 				"\t\t\t\t|     |         /   \\   |"<< "\n";
-	}else if(countDown>=6){cout << 			"\t\t\t\t|     |          /      |"<< "\n";
-					cout << 				"\t\t\t\t|     |         /       |"<< "\n";
-	}else {cout <<							"\t\t\t\t|     |                 |"<< "\n";
-				cout <<						"\t\t\t\t|     |                 |"<< "\n";}
-	cout << 								"\t\t\t\t|     |                 |"<< "\n";
-	cout << 								"\t\t\t\t|    _|_                |"<< "\n";
-	cout << 								"\t\t\t\t|                       |"<< "\n";
-	cout << 								"\t\t\t\t|_______________________|"<< "\n";
-	if(countDown == 7 ) 
-	{
-		lose = true;
-	}
-}
-
-void showScore(int myScore)
-{
-	cout<< setw(30)<<"SCORE"<<"\n";
-	if(myScore>=100)cout<< setw(29) << myScore <<"\n";
-	else if(myScore>=10)cout<< setw(27) << "0" << myScore <<"\n";
-	else cout<< setw(28) << "00" << myScore <<"\n";
-}
-
 void addName()
 {
 	cout << "Player name ?" << "\n";
 	cin >> name;
-}
-
-void addScore()
-{
-	if(lose == true)
-	{
-		yourName.push_back(name);
-		yourScore.push_back(score);
-		loseScene();
-	}
 }
 
 void newPlayer()
@@ -181,25 +113,11 @@ void newPlayer()
 	}while(choose!=1&&choose!=2&&choose!=3);
 }
 
-void loseScene()
-{
-	cout << "-----------------------" << "\n";
-	cout << "|       You Lose      |" << "\n";
-	cout << "-----------------------" << "\n";
-	newPlayer();
-}
+
 
 void ScoreBoard()
 {
-	cout << "Name" << "\t" << "\t" << "Score" << "\n";
-	for(int i=0;i<yourName.size();i++)
-	{
-		cout << yourName[i] << "\t" << "\t" << yourScore[i] << "\n";
-	}
+
 	newPlayer();
 }
-
-
-
-
 

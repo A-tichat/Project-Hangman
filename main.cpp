@@ -4,34 +4,24 @@
 #include <Windows.h>
 #include <mmsystem.h>
 #include "clear.h" //use ClearScreen() to clear screen
-#include "HangmanPicture.h"
+#include "death.h"
 #include <time.h>
-
+#include <cctype>
 using namespace std;
 
-int n=0,deathcount=0,line;
-void addpoint();
-int vocabcheck;
-string vocabcheck2;
-bool checktoaddpoint=true;
-bool checktoaddpoint2=false;
+int e=1;
+int line;
 bool checkline=true;
-bool practicemode=false,normalmode=false,timemode=false;
 vector<char> alphabet;
 char c;
 
 
-
 int main(){
-	
-  	
 	string textline;
 	Home();
 //	PlaySound(TEXT("welcome.wav"), NULL, SND_SYNC);
-	
 
 	srand(time(0));
-
 	cout<<"\nPlease select mode: ";
 	
 //	PlaySound(TEXT("mode.wav"), NULL, SND_SYNC);
@@ -51,9 +41,9 @@ int main(){
 		case 3:practicemode=false;
 			normalmode=false;
 			timemode=true;
-			 
 			break;
 	}
+//Menu 2
 	selection();
 	cout << "\nPlease select type of word: ";
 	int typeofword=0;
@@ -74,83 +64,84 @@ int main(){
 	vector<string> vocab;
 	
 	while(checkline){
-		vocab.push_back(textline);
 		switch(typeofword){
 			case 1:checkline=getline(fin1,textline);break;
 			case 2:checkline=getline(fin2,textline);break;
 			case 3:checkline=getline(fin3,textline);break;
 		}
+		for(int i=0;i<textline.size();i++){
+			textline[i]=toupper(textline[i]);
+		}
+		vocab.push_back(textline);
 	}
 	
+//start game
 	int round=0;
-	
 	while (round<line) {
+		alphabet.clear();	
 		newTurn();
 		int log=list[round];
 		char b[vocab[log].size()];
 		
-		drawScene5Lifes(count);
+		vocabcheck2=vocab[log];
+		
+		showScore(score);
+		drawScene7Lifes();
+		cout << "\n";
+		showAlphabet(alphabet);
+		cout << "\n";
+		cout << setw(20) << left << " " ;
 		for(int i=0;i<vocab[log].size();i++){
 			b[i]='_';
 			cout << b[i] << "  ";
 		}
-		cout << "\n";
+		cout << "\n\n";
+		
 		do{
-			n=0;
-			
-			cout << "input your letter: ";
+			e=1;
+			checktoaddpoint=true;
+			cout << "input your character: ";
 			cin >> c;
+			c=toupper(c);
 			cout << "\n";
 	
 			for(int i=0;i<vocab[log].size();i++){
 				if(c==vocab[log][i]) {
 					b[i]=c;
-					rightAns=b[i];
-					n++;
-					checktoaddpoint2=true;
+					checktoaddpoint=false;
+					addpoint();
 				}
-				vocabcheck2=vocab[log];
-
-				cout << b[i] << "  ";
 			}
 			
-		if (n==0) {
-			cout << "\n"<< "wrong!\n";
-			PlaySound(TEXT("wrong.wav"), NULL, SND_ASYNC);
-			deathcount++;
-		}
+			if (checktoaddpoint) {
+				PlaySound(TEXT("wrong.wav"), NULL, SND_ASYNC);
+				alphabet.push_back(c);
+				deathcount++;
+			}
 		
-		checkAns(c);
+			showScore(score);
+			drawScene7Lifes();
+			cout << "\n";
 		
-		addpoint();
-		alphabet.push_back(c);
-		vocabcheck = alphabet.size();
-		showScore(score);
-		drawScene5Lifes(count);
-		addScore();
-		cout << "\n";
-		bool checktoaddpoint2=false;
-		}while(vocab[log]!=b);
+			showAlphabet(alphabet);
 		
-		cout << "wrong is "<< deathcount <<" times.\n";
+			cout << "\n";
+			cout << setw(20) << left << " " ;
+			for (int i=0;i<vocab[log].size();i++) cout << b[i] << "  ";
+			cout << "\n";
+			cout << setw(20) << left << " " ;
+			for (int i=0;i<vocab[log].size();i++) cout << vocab[log][i] << "  ";
+			addScore();
+			cout << "\n\n";
+			if (vocab[log]==b) {
+				e=0;
+				break;
+			}
+		}while(e);
+		
 		round++;
-		deathcount=0;
 	}
-	
 	return 0;
 }
-void addpoint(){
-	for(int i=0;i<vocabcheck;i++){
-		if(c == alphabet[i]) checktoaddpoint=false;
-	
-		
-	}
-	if(checktoaddpoint and checktoaddpoint2) {
-	
-		if(normalmode) score += n*((6-count)*45*vocabcheck2.size());
-	
-		
-	}
-	checktoaddpoint=true;
-	checktoaddpoint2=false;
-}
+
+

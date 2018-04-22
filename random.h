@@ -24,3 +24,4 @@ vector<int> ranlist(int z){
 	
 	return list;
 }
+
