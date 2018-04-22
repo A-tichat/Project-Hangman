@@ -27,15 +27,16 @@ int main(){
   	
 	string textline;
 	Home();
-	PlaySound(TEXT("welcome.wav"), NULL, SND_SYNC);
+//	PlaySound(TEXT("welcome.wav"), NULL, SND_SYNC);
 	
 
 	srand(time(0));
 
 	cout<<"\nPlease select mode: ";
 	
-	PlaySound(TEXT("mode.wav"), NULL, SND_SYNC);
-	PlaySound(TEXT("mode2.wav"), NULL, SND_SYNC);
+//	PlaySound(TEXT("mode.wav"), NULL, SND_SYNC);
+//	PlaySound(TEXT("mode2.wav"), NULL, SND_SYNC);
+	cout<<"\nPlease select type of word: ";
 	int selectmode=0;
 	cin>>selectmode;
 	switch (selectmode){  //select mode
@@ -119,7 +120,7 @@ int main(){
 			}
 			
 		if (n==0) {
-			cout << "\n"<< "wrong!";
+			cout << "\n"<< "wrong!\n";
 			PlaySound(TEXT("wrong.wav"), NULL, SND_ASYNC);
 			deathcount++;
 		}

@@ -15,18 +15,6 @@ void Home(){
 	for(int i=0; i<=1; i++) cout << " ";
 	cout << "(2)Mode Normal" ; for(int i=0; i<=60; i++) cout << " ";
 	cout << "|\n|"; 
-	for(int i=0; i<=1; i++) cout << " ";
-	cout << "(3)Mode Time" ; for(int i=0; i<=62; i++) cout << " ";
-	cout << "|\n|";
-	for(int i=0; i<=1; i++) cout << " ";
-	cout << "(4)Mode Advance" ; for(int i=0; i<=59; i++) cout << " ";
-	cout << "|\n|";
-	for(int i=0; i<=1; i++) cout << " ";
-	cout << "(5)Mode Develope" ; for(int i=0; i<=58; i++) cout << " ";
-	cout << "|\n|";
-	for(int i=0; i<=1; i++) cout << " ";
-	cout << "(6)Quit game" ; for(int i=0; i<=62; i++) cout << " ";
-	cout << "|\n|";
 	
 	for(int i=0; i<=62; i++) cout << " ";
 	cout << " |----" ; for(int i=0; i<=7; i++) cout << " ";
@@ -123,5 +111,5 @@ void selection(){
 	
 	for(int i=0; i<=6; i++){cout << "\n" <<"|"; for(int i=0; i<=76; i++) cout << " ";	cout << "|";}
 	
-	cout << "\n|"; for (int i=0;i<=76;i++)cout << "-"; cout << "|";
+	cout << "\n|"; for (int i=0;i<=76;i++)cout << "-"; cout << "|\n";
 }

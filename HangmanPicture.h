@@ -29,8 +29,8 @@ bool lose = false;
 int choose;
 
 void writescore(){
-	ofstream write.open("score.txt",fstream::app);
-	write<<yourName<<" "<<yourScore;
+	ofstream write("score.txt",ios::app);
+	write << yourName[0] << " " << yourScore[0] << "\n";
 }
 
 void drawhangman(){
