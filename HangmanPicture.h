@@ -98,22 +98,34 @@ void drawScene11Lifes(int countDown)
 
 void drawScene5Lifes(int countDown)
 {
-	cout << 								" _______________"<< "\n";
-	cout <<									"|               |"<< "\n";
-	cout << 								"|    _____      |"<< "\n";
-	cout << 								"|   |     |	|"<< "\n";
-	if(countDown>=1)cout << 				"|   |     O	|"<< "\n";
-		else cout <<						"|   |           |"<< "\n";
-	if(countDown>=3)cout << 				"|   |	 /|\\	|"<< "\n";
-		else if(countDown>=2) cout <<		"|   |     |     |"<< "\n";
-		else cout <<						"|   |           |"<< "\n";
-	if(countDown>=5)cout << 				"|   |    / \\	|"<< "\n";
-		else if(countDown>=4)cout << 		"|   |    /   	|"<< "\n";
-		else cout << 						"|   |        	|"<< "\n";
-	cout << 								"|  _|_	        |"<< "\n";
-	cout << 								"|               |"<< "\n";
-	cout << 								"|_______________|"<< "\n";
-	if(countDown == 5 ) 
+	cout << 								"\t\t\t\t _______________________"<< "\n";
+	cout <<									"\t\t\t\t|                       |"<< "\n";
+	cout << 								"\t\t\t\t|      ___________      |"<< "\n";
+	if(countDown>=1){cout << 				"\t\t\t\t|     |           |     |"<< "\n";
+					cout << 				"\t\t\t\t|     |           |     |"<< "\n";
+	}else {cout <<							"\t\t\t\t|     |                 |"<< "\n";
+				cout <<						"\t\t\t\t|     |                 |"<< "\n";}
+	if(countDown>=2)cout << 				"\t\t\t\t|     |           O     |"<< "\n";
+		else cout <<						"\t\t\t\t|     |                 |"<< "\n";
+	if(countDown>=5){cout << 				"\t\t\t\t|     |          /|\\    |"<< "\n";
+					cout << 				"\t\t\t\t|     |         / | \\   |"<< "\n";
+	}else if(countDown>=4){cout << 			"\t\t\t\t|     |          /|     |"<< "\n";
+					cout << 				"\t\t\t\t|     |         / |     |"<< "\n";
+	}else if(countDown>=3){cout << 			"\t\t\t\t|     |           |     |"<< "\n";
+					cout << 				"\t\t\t\t|     |           |     |"<< "\n";
+	}else {cout <<							"\t\t\t\t|     |                 |"<< "\n";
+				cout <<						"\t\t\t\t|     |                 |"<< "\n";}
+	if(countDown>=7){cout << 				"\t\t\t\t|     |          / \\    |"<< "\n";
+					cout << 				"\t\t\t\t|     |         /   \\   |"<< "\n";
+	}else if(countDown>=6){cout << 			"\t\t\t\t|     |          /      |"<< "\n";
+					cout << 				"\t\t\t\t|     |         /       |"<< "\n";
+	}else {cout <<							"\t\t\t\t|     |                 |"<< "\n";
+				cout <<						"\t\t\t\t|     |                 |"<< "\n";}
+	cout << 								"\t\t\t\t|     |                 |"<< "\n";
+	cout << 								"\t\t\t\t|    _|_                |"<< "\n";
+	cout << 								"\t\t\t\t|                       |"<< "\n";
+	cout << 								"\t\t\t\t|_______________________|"<< "\n";
+	if(countDown == 7 ) 
 	{
 		lose = true;
 	}

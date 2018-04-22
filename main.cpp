@@ -36,7 +36,7 @@ int main(){
 	
 //	PlaySound(TEXT("mode.wav"), NULL, SND_SYNC);
 //	PlaySound(TEXT("mode2.wav"), NULL, SND_SYNC);
-	cout<<"\nPlease select type of word: ";
+	
 	int selectmode=0;
 	cin>>selectmode;
 	switch (selectmode){  //select mode
@@ -55,7 +55,7 @@ int main(){
 			break;
 	}
 	selection();
-	
+	cout << "\nPlease select type of word: ";
 	int typeofword=0;
 	cin>>typeofword;
 		ifstream fin1("animal.txt");
@@ -67,10 +67,7 @@ int main(){
 		case 3:getline(fin3,textline);break;
 	}
 	//ifstream fin("Exam.txt");
-	
 
-	
-	
 	line=atoi(textline.c_str());
 	
 	vector<int> list=ranlist(line);
@@ -79,11 +76,10 @@ int main(){
 	while(checkline){
 		vocab.push_back(textline);
 		switch(typeofword){
-		case 1:checkline=getline(fin1,textline);break;
-		case 2:checkline=getline(fin2,textline);break;
-		case 3:checkline=getline(fin3,textline);break;
-	}
-		
+			case 1:checkline=getline(fin1,textline);break;
+			case 2:checkline=getline(fin2,textline);break;
+			case 3:checkline=getline(fin3,textline);break;
+		}
 	}
 	
 	int round=0;
@@ -93,6 +89,7 @@ int main(){
 		int log=list[round];
 		char b[vocab[log].size()];
 		
+		drawScene5Lifes(count);
 		for(int i=0;i<vocab[log].size();i++){
 			b[i]='_';
 			cout << b[i] << "  ";
@@ -110,12 +107,10 @@ int main(){
 					b[i]=c;
 					rightAns=b[i];
 					n++;
-					 checktoaddpoint2=true;
+					checktoaddpoint2=true;
 				}
 				vocabcheck2=vocab[log];
-				
-				
-				
+
 				cout << b[i] << "  ";
 			}
 			

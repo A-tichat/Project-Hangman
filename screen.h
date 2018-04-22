@@ -2,114 +2,89 @@
 using namespace std;
 
 void Home(){
-	cout << "|"; for (int i=0;i<=76;i++)cout << "-"; cout << "|\n|";
-	for(int i=0; i<=34; i++) cout << " ";
-	cout << "Hangman" ; for(int i=0; i<=34; i++) cout << " ";
-	cout << "|\n|"; 
-	for(int i=0; i<=76; i++) cout << " ";
-	cout << "|\n|";
+	cout << "\n";
+	cout << "  H      H    A A    N      N  GGGGGG    M       M    A A    N      N  SSSSSSS\n";
+	cout << "  H      H   A   A   NN     N  G    G    MM     MM   A   A   NN     N  S      \n";
+	cout << "  H      H  A     A  N N    N  G         M M   M M  A     A  N N    N  S      \n";
+	cout << "  HHHHHHHH  AAAAAAA  N  N   N  G  GGG    M  M M  M  AAAAAAA  N  N   N  SSSSSSS\n";
+	cout << "  H      H  A     A  N   N  N  G    G    M   M   M  A     A  N   N  N        S\n";
+	cout << "  H      H  A     A  N    N N  G    G    M       M  A     A  N    N N        S\n";
+	cout << "  H      H  A     A  N     NN  GGGGGG    M       M  A     A  N     NN  SSSSSSS\n";
 //menu selection mode game
-	for(int i=0; i<=1; i++) cout << " ";
-	cout << "(1)Mode Practice" ; for(int i=0; i<=58; i++) cout << " ";
-	cout << "|\n|"; 
-	for(int i=0; i<=1; i++) cout << " ";
-	cout << "(2)Mode Normal" ; for(int i=0; i<=60; i++) cout << " ";
-	cout << "|\n|"; 
+	cout << "\n\t\t\t  Mode for play:\n\n";
+	cout << "\t\t\t    (1)Mode Practice\n" ;
+	cout << "\t\t\t    (2)Mode Normal\n\n\n" ;
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |----" ; for(int i=0; i<=7; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |----" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |   |" ; for(int i=0; i<=7; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |   |" ;
+	cout << "\n";
 	
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |   0" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |   0" ; for(int i=0; i<=7; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |  /|\\" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |  /|\\" ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |  / \\" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |  / \\" ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |     " ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |     " ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|\n|";
-	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << "---    " ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|" ;
-	
-	for(int i=0; i<=6; i++){
-		cout << "\n" <<"|"; for(int i=0; i<=76; i++) cout << " ";
-		cout << "|";
-	}
-	
-	cout << "\n|"; for (int i=0;i<=76;i++)cout << "-"; cout << "|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << "---    \n\n" ; 
 }
 
 void selection(){
-	cout << "|"; for (int i=0;i<=76;i++)cout << "-";
-	cout << "|\n|";
-	for(int i=0; i<=34; i++) cout << " ";
-	cout << "Hangman" ; for(int i=0; i<=34; i++) cout << " ";
-	cout << "|\n|"; 
-	for(int i=0; i<=76; i++) cout << " ";
-	cout << "|\n|";
+	cout << "\n";
+	cout << "  H      H    A A    N      N  GGGGGG    M       M    A A    N      N  SSSSSSS\n";
+	cout << "  H      H   A   A   NN     N  G    G    MM     MM   A   A   NN     N  S      \n";
+	cout << "  H      H  A     A  N N    N  G         M M   M M  A     A  N N    N  S      \n";
+	cout << "  HHHHHHHH  AAAAAAA  N  N   N  G  GGG    M  M M  M  AAAAAAA  N  N   N  SSSSSSS\n";
+	cout << "  H      H  A     A  N   N  N  G    G    M   M   M  A     A  N   N  N        S\n";
+	cout << "  H      H  A     A  N    N N  G    G    M       M  A     A  N    N N        S\n";
+	cout << "  H      H  A     A  N     NN  GGGGGG    M       M  A     A  N     NN  SSSSSSS\n";
+	
 //menu selection vocabulaly
-	for(int i=0; i<=1; i++) cout << " ";
-	cout << "Vocabulary about: " ; for(int i=0; i<=56; i++) cout << " ";
-	cout << "|\n|"; 
-	for(int i=0; i<=76; i++) cout << " ";
-	cout << "|\n|"; 
-	for(int i=0; i<=3; i++) cout << " ";
-	cout << "(1)Animal" ; for(int i=0; i<=63; i++) cout << " ";
-	cout << "|\n|"; 
-	for(int i=0; i<=3; i++) cout << " ";
-	cout << "(2)Country" ; for(int i=0; i<=62; i++) cout << " ";
-	cout << "|\n|"; 
-	for(int i=0; i<=3; i++) cout << " ";
-	cout << "(3)Fruits" ; for(int i=0; i<=63; i++) cout << " ";
-	cout << "|\n|";
-	for(int i=0; i<=3; i++) cout << " ";
-	cout << "(4)Body" ; for(int i=0; i<=65; i++) cout << " ";
-	cout << "|\n|";
+	cout << "\n\t\t\t  Vocabulary about: \n\n";
+	cout << "\t\t\t    (1)Animal\n"; 
+	cout << "\t\t\t    (2)Country\n"; 
+	cout << "\t\t\t    (3)Fruits\n";
+	cout << "\t\t\t    (4)Body\n\n";
 //end menu
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |----" ; for(int i=0; i<=7; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |----" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |   |" ; for(int i=0; i<=7; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |   |" ;
+	cout << "\n";
 	
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |   0" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |   0" ; for(int i=0; i<=7; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |  /|\\" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |  /|\\" ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |  / \\" ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |  / \\" ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|\n|";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << " |     " ;
+	cout << "\n";
 	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << " |     " ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|\n|";
-	
-	for(int i=0; i<=62; i++) cout << " ";
-	cout << "---    " ; for(int i=0; i<=6; i++) cout << " ";
-	cout << "|" ;
-	
-	for(int i=0; i<=6; i++){cout << "\n" <<"|"; for(int i=0; i<=76; i++) cout << " ";	cout << "|";}
-	
-	cout << "\n|"; for (int i=0;i<=76;i++)cout << "-"; cout << "|\n";
+	for(int i=0; i<=32; i++) cout << " ";
+	cout << "---    \n" ;
+
 }
