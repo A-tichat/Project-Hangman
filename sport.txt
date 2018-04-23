@@ -1,0 +1,43 @@
+archery
+american football
+athletics
+badminton
+baseball
+basketball
+bowling
+boxing
+crickere
+car racing
+cycling
+darts
+fencing
+fishing
+football
+gymnastics
+golf
+handball
+high jump
+hockey
+horse racing
+ice skating
+judo
+polo
+karat
+rugby
+running
+sailing
+softball
+shooting
+skateboarding
+skating
+skiing
+sqaush
+snooker
+snowboarding
+swimming
+taekwondo
+table tennis
+tennis
+volleyball
+weight lifting
+wrestling
