@@ -3,6 +3,7 @@
 #include<iomanip>
 #include<vector>
 #include<fstream>
+#include<set>
 using namespace std;
 
 int deathcount=0;
@@ -22,10 +23,12 @@ void newTurn()
 }
 
 void showScore(int myScore){
+	cout << "\n";
 	cout<< setw(60)<<"SCORE"<<"\n";
 	if(myScore>=100)cout<< setw(59) << myScore <<"\n";
 	else if(myScore>=10)cout<< setw(59) << "0" << myScore <<"\n";
 	else cout<< setw(59) << "00" << myScore <<"\n";
+	cout << "\n";
 }
 
 void drawScene7Lifes()
@@ -54,6 +57,7 @@ void drawScene7Lifes()
 	}else {cout <<							"\t\t\t\t|     |                 |"<< "\n";
 				cout <<						"\t\t\t\t|     |                 |"<< "\n";}
 	cout << 								"\t\t\t\t|     |                 |"<< "\n";
+	cout << 								"\t\t\t\t|     |                 |"<< "\n";
 	cout << 								"\t\t\t\t|    _|_                |"<< "\n";
 	cout << 								"\t\t\t\t|                       |"<< "\n";
 	cout << 								"\t\t\t\t|_______________________|"<< "\n";
@@ -72,28 +76,34 @@ void addpoint(){
 void addScore()
 {
 	if(lose){
+		cout << "\n";
 		cout << setw(20) << left << " " << "-----------------------" << "\n";
+		cout << setw(20) << left << " " << "|                     |" << "\n";
 		cout << setw(20) << left << " " << "|       You Lose      |" << "\n";
+		cout << setw(20) << left << " " << "|                     |" << "\n";
 		cout << setw(20) << left << " " << "-----------------------" << "\n";
 		cout << "Input your name: ";
 		cin >> name;
+		yourName.push_back(name);
+		yourScore.push_back(score);
 		cout << setw(20) << left << " " << setw(20) << left << "Name" << "Score" << "\n";
-		for(int i=0;i<1;i++)
+		for(int i=0;i<yourName.size();i++)
 		{
 		cout << setw(20) << left << " " << setw(20) << left << yourName[i] << yourScore[i] << "\n";
 		}
 		cout << "Enter to continues: ";
 		cin.ignore();
-		yourName.push_back(name);
-		yourScore.push_back(score);
-		Home();
+		getline(cin,name);
+
 	}
 }
 
-void showAlphabet(vector<char> alphabet){
+void showAlphabet(set<char> mySet){
 	cout << setw(20) << left << " " << "Worded: "; 
-		for (int i=0;i<alphabet.size();i++) {
-			cout << alphabet[i] << " ";
-		}
+	set<char>::iterator j;
+	for (j = mySet.begin(); j!=mySet.end() ;j++){
+		cout << *j << " ";
+	}	
+
 	cout << "\n";
 }

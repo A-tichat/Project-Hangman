@@ -12,7 +12,7 @@ using namespace std;
 int e=1;
 int line;
 bool checkline=true;
-vector<char> alphabet;
+set<char> alphabet;
 char c;
 
 
@@ -69,9 +69,6 @@ int main(){
 			case 2:checkline=getline(fin2,textline);break;
 			case 3:checkline=getline(fin3,textline);break;
 		}
-		for(int i=0;i<textline.size();i++){
-			textline[i]=toupper(textline[i]);
-		}
 		vocab.push_back(textline);
 	}
 	
@@ -84,6 +81,11 @@ int main(){
 		char b[vocab[log].size()];
 		
 		vocabcheck2=vocab[log];
+		for (int i=0;i<vocab[log].size();i++){
+			vocabcheck2[i]=toupper(vocabcheck2[i]);
+			vocabcheck2[vocab[log].size()]='\0';
+		}
+		
 		
 		showScore(score);
 		drawScene7Lifes();
@@ -91,8 +93,9 @@ int main(){
 		showAlphabet(alphabet);
 		cout << "\n";
 		cout << setw(20) << left << " " ;
-		for(int i=0;i<vocab[log].size();i++){
+		for(int i=0;i<vocabcheck2.size();i++){
 			b[i]='_';
+			b[vocabcheck2.size()]='\0';
 			cout << b[i] << "  ";
 		}
 		cout << "\n\n";
@@ -105,8 +108,8 @@ int main(){
 			c=toupper(c);
 			cout << "\n";
 	
-			for(int i=0;i<vocab[log].size();i++){
-				if(c==vocab[log][i]) {
+			for(int i=0;i<vocabcheck2.size();i++){
+				if(c==vocabcheck2[i]) {
 					b[i]=c;
 					checktoaddpoint=false;
 					addpoint();
@@ -115,7 +118,7 @@ int main(){
 			
 			if (checktoaddpoint) {
 				PlaySound(TEXT("wrong.wav"), NULL, SND_ASYNC);
-				alphabet.push_back(c);
+				alphabet.insert(c);
 				deathcount++;
 			}
 		
@@ -133,11 +136,8 @@ int main(){
 			for (int i=0;i<vocab[log].size();i++) cout << vocab[log][i] << "  ";
 			addScore();
 			cout << "\n\n";
-			if (vocab[log]==b) {
-				e=0;
-				break;
-			}
-		}while(e);
+
+		}while(vocabcheck2!=b);
 		
 		round++;
 	}

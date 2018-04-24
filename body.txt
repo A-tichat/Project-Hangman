@@ -36,7 +36,6 @@ hip
 jaw
 kidney
 knee
-large intestine
 leg
 lip
 lung
@@ -56,7 +55,6 @@ shoulder
 shull
 spleen
 skin
-small intestine
 stomach
 temp
 throat
