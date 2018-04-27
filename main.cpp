@@ -134,7 +134,7 @@ int main(){
 			cout << "\n";
 			cout << setw(20) << left << " " ;
 			for (int i=0;i<vocab[log].size();i++) cout << vocab[log][i] << "  ";
-			addScore();
+			addScore(score);
 			cout << "\n\n";
 
 		}while(vocabcheck2!=b);

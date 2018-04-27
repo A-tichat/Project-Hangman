@@ -73,7 +73,7 @@ void addpoint(){
 
 }
 
-void addScore()
+void addScore(int myScore)
 {
 	if(lose){
 		cout << "\n";
@@ -82,6 +82,37 @@ void addScore()
 		cout << setw(20) << left << " " << "|       You Lose      |" << "\n";
 		cout << setw(20) << left << " " << "|                     |" << "\n";
 		cout << setw(20) << left << " " << "-----------------------" << "\n";
+	
+			cout << 	"\t\t\t\t _______________________"<< "\n";
+			cout <<		"\t\t\t\t|                       |"<< "\n";
+			cout <<		"\t\t\t\t|      ___________      |"<< "\n";
+			cout << 	"\t\t\t\t|     |           |     |"<< "\n";
+			cout << 	"\t\t\t\t|     |           |     |"<< "\n";
+			cout <<		"\t\t\t\t|     |           O     |"<< "\n";
+			cout <<		"\t\t\t\t|     |          /|\\    |" << "\n";
+			int c;
+		if(myScore==0) c=9;
+		else if(myScore>=100&&myScore<1000) c=7;
+		else if(myScore>=1000&&myScore<10000) c=6;
+		else if(myScore>=10000&&myScore<100000) c=4;
+		else if(myScore>=100000&&myScore<1000000) c=3;
+		else if(myScore>=1000000&&myScore<10000000) c=2;
+		else if(myScore>=10000000&&myScore<100000000) c=1;
+			
+			cout << "\t\tSCORE " << myScore;
+			for (int i=1; i<=c; i++) cout << " ";
+			cout << 	"|     |         / | \\   |"<< "\n"; //9space
+			cout << 	"\t\t\t\t|     |           |     |"<< "\n";
+			cout << 	"\t\t\t\t|     |          / \\    |"<< "\n";
+			cout << 	"\t\t\t\t|     |         /   \\   |"<< "\n";
+			cout <<		"\t\t\t\t|     |                 |"<< "\n";
+			cout << 	"\t\t\t\t|     |                 |"<< "\n";
+			cout << 	"\t\t\t\t|     |                 |"<< "\n";
+			cout << 	"\t\t\t\t|    _|_                |"<< "\n";
+			cout << 	"\t\t\t\t|                       |"<< "\n";
+			cout << 	"\t\t\t\t|_______________________|"<< "\n";
+			cout << "\n";
+			
 		cout << "Input your name: ";
 		cin >> name;
 		yourName.push_back(name);
