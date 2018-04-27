@@ -379,3 +379,4 @@ void playGame(){
 	win=true;
 	addScore();
 }
+
