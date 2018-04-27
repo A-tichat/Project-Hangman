@@ -8,6 +8,7 @@ int main(){
 		selection();
 		playGame();
 	}while(1);
+
 	return 0;
 }
 
