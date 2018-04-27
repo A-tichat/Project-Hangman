@@ -1,4 +1,4 @@
-104
+91
 Apple
 Apricot
 Avocado
@@ -8,16 +8,13 @@ Blackberry
 Blackcurrant
 Blueberry
 Boysenberry
-Crab apples
 Currant
 Cherry
 Cherimoya
-Chico fruit
 Cloudberry
 Coconut
 Cranberry
 Cucumber
-Custard apple
 Damson
 Date
 Dragonfruit
@@ -25,7 +22,6 @@ Durian
 Elderberry
 Feijoa
 Fig
-Goji berry
 Gooseberry
 Grape
 Raisin
@@ -37,7 +33,6 @@ Jabuticaba
 Jackfruit
 Jambul
 Jujube
-Juniper berry
 Kiwano
 Kiwifruit
 Kumquat
@@ -46,8 +41,6 @@ Lime
 Loquat
 Longan
 Avocado
-Chili pepper
-Corn kernel
 Cucumber
 Eggplant
 Lychee
@@ -58,13 +51,11 @@ Melon
 Cantaloupe
 Honeydew
 Watermelon
-Miracle fruit
 Mulberry
 Nectarine
 Nance
 Olive
 Orange
-Blood orange
 Clementine
 Mandarine
 Tangerine
@@ -75,28 +66,24 @@ Pear
 Persimmon
 Plantain
 Plum
-Prune 
+Prune
 Pineapple
 Plumcot
 Pluot
 Pomegranate
 Pomelo
-Purple mangosteen
 Quince
 Raspberry
 Salmonberry
 Rambutan
 Redcurrant
-Salal berry
 Salak
 Satsuma
 Soursop
-Star fruit
 gonzoberry
 Strawberry
 Tamarillo
 Tamarind
-Ugli fruit
 Yuzu
 Olive
 Pea

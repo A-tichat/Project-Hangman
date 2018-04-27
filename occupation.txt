@@ -1,10 +1,9 @@
-162
+154
 accountant
 acrobat
 actor
 actress
 adman
-air hostess
 announcer
 archaeologist
 architect
@@ -48,14 +47,13 @@ designer
 detective
 director
 diplomat
-disk jockey
 doctor
 driver
 drummer
 economist
 editor
 electrician
-engine driver
+driver
 engineer
 entrepreneur
 explorer
@@ -63,11 +61,8 @@ farmer
 firefighter
 fireman
 fishman
-flight attendant
 freelance
 foreman
-game designer
-garbage man
 geographer
 gardener
 goldsmith
@@ -133,10 +128,8 @@ salesman
 scientist
 sculptor
 secretary
-security guard
 servant
 sheriff
-shop assistant
 shopkeeper
 shoemaker
 singer
@@ -147,12 +140,10 @@ student
 stylist
 surgeon
 tailor
-taxi driver
 teacher
 technician
 trainer
 translator
-truck driver
 tutor
 verterinarian
 violinist
@@ -162,9 +153,3 @@ warrior
 watcher
 writer
 zookeeper
-
-
-
-
-
-

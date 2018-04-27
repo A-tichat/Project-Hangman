@@ -1,6 +1,5 @@
-43
+36
 archery
-american football
 athletics
 badminton
 baseball
@@ -8,7 +7,6 @@ basketball
 bowling
 boxing
 crickere
-car racing
 cycling
 darts
 fencing
@@ -17,10 +15,7 @@ football
 gymnastics
 golf
 handball
-high jump
 hockey
-horse racing
-ice skating
 judo
 polo
 karat
@@ -37,8 +32,6 @@ snooker
 snowboarding
 swimming
 taekwondo
-table tennis
 tennis
 volleyball
-weight lifting
 wrestling
